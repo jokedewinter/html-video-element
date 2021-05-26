@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>HTML video element</title>
+	<link rel="stylesheet" href="css/screen.css">
+</head>
+
+<body>
+	<header>
+		<h1>HTML video element</h1>
+		<p>source <a href="https://medium.com/@brianmayrose/html5-video-tag-examples-55664ad3735e" rel="external">HTML5 Video Tag Examples</a></p>
+		<ul>
+			<li>Poster: Aye or Nay (gif)</li>
+			<li>MP4: Weather day</li>
+			<li>WebM: Kettle</li>
+			<li>GIF: Lollipop</li>
+		</ul>
+	</header>
+	
+	<section class="hero">
+		<h2>This works in Chrome, Firefox, Opera & Safari.</h2>
+		<p>But it all depends on how you generated the mp4 file. If it's not done the right way, then it will only work in Chrome.</p>
+		<p>The video is set to autoplay and loop.</p>
+		<video autoplay muted loop poster="video/05-aye-or-nay.gif">
+			<source src="video/13-british-weather-day.mp4" type="video/mp4">
+			<source src="video/09-put-the-kettle-on.webm" type="video/webm">
+			<img src="video/22-lollipop-ladies.gif" title="Your browser does not support HTML5 video.">
+		</video>
+	</section>
+	
+	<section>
+		<h2>Display a video file.</h2>
+		<p>This gives you an image of the first frame of the mp4 file. In order to play the file, the user needs to right click the image and select ‘show controls’.</p>
+		<video src="video/13-british-weather-day.mp4" poster="video/05-aye-or-nay.gif">
+	</section>
+	
+	<section>
+		<h2>Video file with controls.</h2>
+		<p>Adds the controls to the bottom of the image when the page loads. Fallback message inside the video tag is for browsers not recognizing HTML5 video.</p>
+		<video controls src="video/13-british-weather-day.mp4" poster="video/05-aye-or-nay.gif">
+			<p>Your browser does not support HTML5 video. Here is a <a href="video/13-british-weather-day.mp4.mp4">link to the video</a> instead.</p>
+		</video>
+	</section>
+	
+	<section>
+		<h2>Add sizing tags and styling.</h2>
+		<p>The video tag allows for basic styling using width, height, and the poster properties. These properties are used inline in the video tag. The poster property takes an image file and uses it as the display image for the video file on the page.</p>
+		<video src="video/13-british-weather-day.mp4" controls width="600" height="450" loop muted poster="video/05-aye-or-nay.gif">
+			<p>Your browser does not support HTML5 video.</p>
+		</video>
+	</section>
+	
+	<section>
+		<h2>Best practice: move video file inside <code>video</code> tag.</h2>
+		<p>This way you can also include fallback files for other video formats.</p>
+		<video controls autoplay muted poster="video/05-aye-or-nay.gif">
+			<source src="video/13-british-weather-day.mp4" type="video/mp4">
+			<source src="video/09-put-the-kettle-on.webm" type="video/webm">
+			<p>Your browser does not support HTML5 video.</p>
+		</video>
+	</section>
+		
+	<section>
+		<h2>Image fallback if the video doesn't work</h2>
+		<p>The image tag is added to the video tag.</p>
+		<video autoplay muted loop preload>
+			<source src="video/13-british-weather-day.mp4" type="video/mp4">
+			<source src="video/09-put-the-kettle-on.webm" type="video/webm">
+			<img src="video/22-lollipop-ladies.gif" title="Your browser does not support HTML5 video.">
+		</video>
+	</section>
+	
+	<section>
+		<h2>Add subtitles</h2>
+		<p>Add a <code>track</code> tag and place below the <code>source</code> tags.</p>
+		<p>The source for our track tag is a file with a .vtt extension (video text track). This is a text file that must be in a specific format. Here is an example:</p>
+		<p><a href="https://www.w3.org/TR/webvtt1/" rel="external">More on VTT</a></p>
+		<video controls loop poster="video/05-aye-or-nay.gif">
+			<source src="video/13-british-weather-day.mp4" type="video/mp4">
+			<source src="video/09-put-the-kettle-on.webm" type="video/webm">
+			<track kind="subtitles" label="English" src="subtitles/13-british-weather.vtt" srclang="en">
+			<p>Your browser does not support HTML5 video.</p>
+		</video>
+	</section>
+	
+	<section>
+		<h2>Custom styled video player.</h2>
+		<p>In order to customize the video player, we need to rebuild the built-in controls with our own using javascript. Also, remember to remove the controls property from the video tag. Create a separate javascript file and CSS file. Link to these files in the head of your HTML.</p>
+		<p>Add ids’ to your HTML elements and create a new div below your video tags. Give this new div the ID of ‘player_controls’ and inside the div create 4 input elements.</p>
+		<video id="video_player" poster="video/05-aye-or-nay.gif">
+			<source src="video/13-british-weather-day.mp4" type="video/mp4">
+			<source src="video/09-put-the-kettle-on.webm" type="video/webm">
+		</video>
+		<div id="player_controls">
+			<input type="image" src="assets/play.png" onclick="play_vid()" id="play_button">
+			<input type="image" src="assets/pause.png" onclick="pause_vid()" id="pause_button">
+			<input type="image" src="assets/stop.png" onclick="stop_vid()" id="stop_button">
+			<img src="assets/volume.png" id="vol_img">
+			<input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="1" value="1">
+		</div>
+	</section>
+	
+	<section>
+		<h2>Display a gif inside an image tag.</h2>
+		<p>Just a gif.</p>
+		<img src="video/22-lollipop-ladies.gif" alt="This is a lollipop lady.">
+	</section>
+	
+	<section>
+		<h2>Use the picture element to display an mp4.</h2>
+		<p>Have a gif fallback in an image tag.</p>
+		<picture>
+			<source srcset="video/13-british-weather-day.mp4" type="video/mp4">
+			<source srcset="video/09-put-the-kettle-on.webm" type="video/webm">
+			<img src="video/22-lollipop-ladies.gif" title="Your browser does not support HTML5 video.">
+		</picture>
+	</section>
+	<section>
+		<h2>Display mp4 file inside an image tag.</h2>
+		<img src="video/13-british-weather-day.mp4" title="Your browser does not support HTML5 video.">
+	</section>
+
+	<script src="js/script.js"></script>
+</body>
+</html>

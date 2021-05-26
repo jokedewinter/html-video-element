@@ -1,0 +1,109 @@
+/**
+ * -------------------------------------------------------------
+ * Reset
+ * ------------------------------------------------------------- */
+
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+	-webkit-text-size-adjust: 100%; 
+	
+	margin: 0;
+	padding: 0;
+}
+
+header, section { display: block; }
+
+
+/**
+ * ------------------------------------------------------------- 
+ * Site settings
+ * ------------------------------------------------------------- */
+
+body {
+	width: 90%;
+	max-width: 1440px;
+	margin: 2em auto;
+	text-align: left;
+	
+	font-family: sans-serif;
+	line-height: 1.5;
+	color: #333;	
+
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+	grid-auto-flow: dense;
+	grid-gap: 2em;
+}
+
+p {
+	font-size: 18px;	
+	margin-bottom: 0.5em;
+}
+
+/**
+ * -------------------------------------------------------------
+ * Layout
+ * ------------------------------------------------------------- */
+
+header { grid-column: 1 / -1; }
+
+section { 
+	position: relative; 
+	margin-bottom: 5em; 
+	grid-column: span 1; 
+}
+
+.hero {
+	background: #333;
+	padding: 2em;
+	color: #fff;
+}
+
+
+/**
+ * -------------------------------------------------------------
+ * Image / video
+ * ------------------------------------------------------------- */
+
+img, 
+video { 
+	max-width: 100%; 
+	margin: 1em 0;
+	border: 1px solid #ddd;
+}
+
+
+/**
+ * -------------------------------------------------------------
+ * Video controls
+ * ------------------------------------------------------------- */
+
+#video_player { width:100%; }
+
+input[type="image"], 
+#vol_img { 
+	float:left; 
+	width: 32px; 
+	margin: 5px;
+	border: 1px solid #fff;
+}
+
+#vol_img,
+#change_vol { 
+	float: right;
+}
+
+#change_vol {
+	width: 100px;
+	margin: 15px 5px 0 0;	
+}
+
+#player_controls { 
+	position:absolute; 
+	bottom: -1.75em;
+	width: 100%; 
+	padding: 5px;
+	background-color: #ddd; 
+}
