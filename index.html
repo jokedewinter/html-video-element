@@ -15,7 +15,7 @@
 		<ul>
 			<li>Poster: Aye or Nay (gif)</li>
 			<li>MP4: Weather day</li>
-			<li>WebM: Kettle</li>
+			<!--<li>WebM: Kettle</li>-->
 			<li>GIF: Lollipop</li>
 		</ul>
 	</header>
@@ -26,7 +26,7 @@
 		<p>The video is set to autoplay and loop.</p>
 		<video autoplay muted loop poster="video/05-aye-or-nay.gif">
 			<source src="video/13-british-weather-day.mp4" type="video/mp4">
-			<source src="video/09-put-the-kettle-on.webm" type="video/webm">
+			<!--<source src="video/09-put-the-kettle-on.webm" type="video/webm">-->
 			<img src="video/22-lollipop-ladies.gif" title="Your browser does not support HTML5 video.">
 		</video>
 	</section>
@@ -58,7 +58,7 @@
 		<p>This way you can also include fallback files for other video formats.</p>
 		<video controls autoplay muted poster="video/05-aye-or-nay.gif">
 			<source src="video/13-british-weather-day.mp4" type="video/mp4">
-			<source src="video/09-put-the-kettle-on.webm" type="video/webm">
+			<!--<source src="video/09-put-the-kettle-on.webm" type="video/webm">-->
 			<p>Your browser does not support HTML5 video.</p>
 		</video>
 	</section>
@@ -68,7 +68,7 @@
 		<p>The image tag is added to the video tag.</p>
 		<video autoplay muted loop preload>
 			<source src="video/13-british-weather-day.mp4" type="video/mp4">
-			<source src="video/09-put-the-kettle-on.webm" type="video/webm">
+			<!--<source src="video/09-put-the-kettle-on.webm" type="video/webm">-->
 			<img src="video/22-lollipop-ladies.gif" title="Your browser does not support HTML5 video.">
 		</video>
 	</section>
@@ -80,7 +80,7 @@
 		<p><a href="https://www.w3.org/TR/webvtt1/" rel="external">More on VTT</a></p>
 		<video controls loop poster="video/05-aye-or-nay.gif">
 			<source src="video/13-british-weather-day.mp4" type="video/mp4">
-			<source src="video/09-put-the-kettle-on.webm" type="video/webm">
+			<!--<source src="video/09-put-the-kettle-on.webm" type="video/webm">-->
 			<track kind="subtitles" label="English" src="subtitles/13-british-weather.vtt" srclang="en">
 			<p>Your browser does not support HTML5 video.</p>
 		</video>
@@ -92,7 +92,7 @@
 		<p>Add ids’ to your HTML elements and create a new div below your video tags. Give this new div the ID of ‘player_controls’ and inside the div create 4 input elements.</p>
 		<video id="video_player" poster="video/05-aye-or-nay.gif">
 			<source src="video/13-british-weather-day.mp4" type="video/mp4">
-			<source src="video/09-put-the-kettle-on.webm" type="video/webm">
+			<!--<source src="video/09-put-the-kettle-on.webm" type="video/webm">-->
 		</video>
 		<div id="player_controls">
 			<input type="image" src="assets/play.png" onclick="play_vid()" id="play_button">
@@ -114,7 +114,7 @@
 		<p>Have a gif fallback in an image tag.</p>
 		<picture>
 			<source srcset="video/13-british-weather-day.mp4" type="video/mp4">
-			<source srcset="video/09-put-the-kettle-on.webm" type="video/webm">
+			<!--<source srcset="video/09-put-the-kettle-on.webm" type="video/webm">-->
 			<img src="video/22-lollipop-ladies.gif" title="Your browser does not support HTML5 video.">
 		</picture>
 	</section>
